@@ -24,6 +24,8 @@ def install_requirements(
         cmd += "requirements-chapter7.txt -f https://download.pytorch.org/whl/torch_stable.html".split()
     elif is_chapter7_v2:
         cmd.append("requirements-chapter7-v2.txt")
+    elif is_chapter2:
+        cmd.append("requirements_chapter2.txt")
     else:
         cmd.append("requirements.txt")
     process_install = subprocess.run(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
